@@ -8,7 +8,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-const page = () => {
+const Page = () => {
     const [consortiums, setConsortiums] = useState<any>();
     const [token, setToken] = useState<string>("");
     const path = usePathname();
@@ -51,4 +51,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Page;
