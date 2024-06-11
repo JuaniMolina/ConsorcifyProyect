@@ -17,6 +17,7 @@ const Renter = () => {
             </div>
             {Depto.map((item) => (
                 <Link
+                    key={item.owner}
                     href="#"
                     className="grid grid-cols-3 gap-3 py-2 text-black bg-gray-300 rounded-lg hover:bg-slate-500"
                 >

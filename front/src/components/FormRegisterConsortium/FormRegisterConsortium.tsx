@@ -15,8 +15,6 @@ import {
     getConsortiumById,
     updateConsortium,
 } from "@/helpers/fetch.helper";
-import { log } from "console";
-import { register } from "module";
 
 const FormRegisterConsortium = ({ update = false }) => {
     const initialData = {
@@ -81,7 +79,7 @@ const FormRegisterConsortium = ({ update = false }) => {
                 fetchConsortium();
             }
         }
-    }, [token]);
+    }, [token, params.id, update]);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -189,7 +187,8 @@ const FormRegisterConsortium = ({ update = false }) => {
                 <div className="flex flex-row gap-4">
                     <div className="flex flex-col lg:w-1/4">
                         <Label htmlFor="suterh_key">
-                            Clave SUTERH:<span className="text-red-600">*</span>
+                            Clave SUTERH:
+                            <span className="text-red-600">&ast;</span>
                         </Label>
                         <Input
                             id="suterh_key"
@@ -202,7 +201,8 @@ const FormRegisterConsortium = ({ update = false }) => {
                     </div>
                     <div className="flex flex-col lg:w-1/2">
                         <Label htmlFor="name">
-                            Razon Social:<span className="text-red-600">*</span>
+                            Razon Social:
+                            <span className="text-red-600">&ast;</span>
                         </Label>
                         <Input
                             id="name"
@@ -215,7 +215,7 @@ const FormRegisterConsortium = ({ update = false }) => {
                     </div>
                     <div className="flex flex-col lg:w-1/4">
                         <Label htmlFor="cuit">
-                            CUIT:<span className="text-red-600">*</span>
+                            CUIT:<span className="text-red-600">&ast;</span>
                         </Label>
                         <Input
                             id="cuit"
@@ -231,7 +231,8 @@ const FormRegisterConsortium = ({ update = false }) => {
                 <div className="flex flex-row gap-4 ">
                     <div className="flex flex-col lg:w-3/4">
                         <Label htmlFor="street_name">
-                            Dirección:<span className="text-red-600">*</span>
+                            Dirección:
+                            <span className="text-red-600">&ast;</span>
                         </Label>
                         <Input
                             id="street_name"
@@ -244,7 +245,7 @@ const FormRegisterConsortium = ({ update = false }) => {
                     </div>
                     <div className="flex flex-col lg:w-1/4">
                         <Label htmlFor="building_number">
-                            Altura:<span className="text-red-600">*</span>
+                            Altura:<span className="text-red-600">&ast;</span>
                         </Label>
                         <Input
                             id="building_number"
@@ -264,7 +265,7 @@ const FormRegisterConsortium = ({ update = false }) => {
                 <div className="flex flex-row gap-4">
                     <div className="flex flex-col lg:w-1/4">
                         <Label htmlFor="country">
-                            País:<span className="text-red-600">*</span>
+                            País:<span className="text-red-600">&ast;</span>
                         </Label>
                         <Input
                             id="country"
@@ -277,7 +278,8 @@ const FormRegisterConsortium = ({ update = false }) => {
                     </div>
                     <div className="flex flex-col lg:w-1/4">
                         <Label htmlFor="province">
-                            Provincia:<span className="text-red-600">*</span>
+                            Provincia:
+                            <span className="text-red-600">&ast;</span>
                         </Label>
                         <Input
                             id="province"
@@ -290,7 +292,7 @@ const FormRegisterConsortium = ({ update = false }) => {
                     </div>
                     <div className="flex flex-col lg:w-1/4">
                         <Label htmlFor="city">
-                            Ciudad:<span className="text-red-600">*</span>
+                            Ciudad:<span className="text-red-600">&ast;</span>
                         </Label>
                         <Input
                             id="city"
@@ -304,7 +306,7 @@ const FormRegisterConsortium = ({ update = false }) => {
                     <div className="flex flex-col lg:w-1/4">
                         <Label htmlFor="zip_code">
                             Código postal:
-                            <span className="text-red-600">*</span>
+                            <span className="text-red-600">&ast;</span>
                         </Label>
                         <Input
                             id="zip_code"
@@ -321,7 +323,7 @@ const FormRegisterConsortium = ({ update = false }) => {
                     <div className="flex flex-col lg:w-1/4">
                         <Label htmlFor="floors">
                             Cantidad de pisos:
-                            <span className="text-red-600">*</span>
+                            <span className="text-red-600">&ast;</span>
                         </Label>
                         <Input
                             id="floors"
@@ -338,8 +340,8 @@ const FormRegisterConsortium = ({ update = false }) => {
                     </div>
                     <div className="flex flex-col lg:w-1/4">
                         <Label htmlFor="ufs">
-                            Cantidad UF's:
-                            <span className="text-red-600">*</span>
+                            Cantidad UF&apos;s:
+                            <span className="text-red-600">&ast;</span>
                         </Label>
                         <Input
                             id="ufs"
@@ -357,8 +359,9 @@ const FormRegisterConsortium = ({ update = false }) => {
                     <div className="flex flex-col lg:w-1/4">
                         <Label htmlFor="category">
                             Categoría edificio:
-                            <span className="text-red-600">*</span>
+                            <span className="text-red-600">&ast;</span>
                         </Label>
+
                         <Input
                             id="category"
                             name="category"
@@ -375,7 +378,7 @@ const FormRegisterConsortium = ({ update = false }) => {
                     <div className="flex flex-col lg:w-1/4">
                         <Label htmlFor="first_due_day">
                             Primer vencimiento:
-                            <span className="text-red-600">*</span>
+                            <span className="text-red-600">&ast;</span>
                         </Label>
                         <Input
                             id="first_due_day"

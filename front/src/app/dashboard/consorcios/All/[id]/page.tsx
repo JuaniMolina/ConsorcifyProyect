@@ -11,7 +11,7 @@ import { formatearNumero } from "@/helpers/functions.helper";
 import useAuth from "@/helpers/useAuth";
 import Link from "next/link";
 import { useParams, usePathname, useRouter } from "next/navigation";
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 
 const Page = () => {
@@ -51,7 +51,7 @@ const Page = () => {
             const formatedCuit = formatearNumero(consorcio?.cuit!);
             setCuit(formatedCuit);
         }
-    });
+    }, [consorcio]);
 
     const handleDelete = async () => {
         const response = await deleteConsortiumById(params.id, token);

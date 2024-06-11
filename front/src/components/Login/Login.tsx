@@ -44,7 +44,7 @@ const Login = () => {
         }));
 
         console.log(errors);
-    }, [userData]);
+    }, [userData, errors]);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
