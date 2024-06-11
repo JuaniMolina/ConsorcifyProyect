@@ -14,7 +14,7 @@ import { useParams, usePathname, useRouter } from "next/navigation";
 import React, { use, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 
-const page = () => {
+const Page = () => {
     useAuth();
     const params: { id: string } = useParams();
     const [token, setToken] = useState<string>("");
@@ -118,4 +118,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Page;
